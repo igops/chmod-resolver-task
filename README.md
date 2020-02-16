@@ -1,11 +1,11 @@
-# chmod-resolver
+# chmod-resolver-task
 
 Installation (needs PHP 7.3+ and composer, see https://getcomposer.org)
 ```
 ./resolve install
 ```
 
-Usage:
+Expected usage:
 ```
 ./resolve [MODE] [WHO] [OPERATION], e.g.: 
 
@@ -18,3 +18,7 @@ Running tests:
 ```
 ./resolve test
 ```
+
+Task: to fix the tests
+
+Correct answer: https://github.com/kugaudo/chmod-resolver
