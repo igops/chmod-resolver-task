@@ -1,0 +1,21 @@
+{
+    "name": "kugaudo/chmod-resolver",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Igor Kugaudo",
+            "email": "igor@kugaudo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kugaudo\\Chmod\\": ["lib/"]
+        }
+    },
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+if [ "$1" == "-h" ]; then
+  echo "Usage: ./`basename $0` [MODE] [WHO] [OPERATION], e.g.: "
+  echo "./`basename $0` 755 u x      # checks if 755 mode allows user to execute"
+  echo "./`basename $0` 001 g r      # checks if 001 mode allows group to read"
+  echo "./`basename $0` 225 o w      # checks if 255 mode allows others to write"
+  echo
+  echo "./`basename $0` test         # runs tests"
+  exit 0
+fi
+
+if [ "$1" == "install" ]; then
+  composer=`which composer`
+  if ["$composer" == ""]; then
+    echo "Could not locate composer, see https://getcomposer.org"
+    exit 1
+  fi
+  $composer install
+  echo
+  "$0" -h
+  exit 0
+fi
+
+if [ "$1" == "test" ]; then
+  ./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests
+  exit 0
+fi
+
+PHP=`which php`
+  if ["$PHP" == ""]; then
+    echo "Could not locate php cli"
+    exit 1
+  fi
+$PHP resolve.php $1 $2 $3
