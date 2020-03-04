@@ -37,6 +37,9 @@ class ChmodResolver
     /** @var BitExtractor */
     private $bitExtractor;
 
+    /** @var UniversalExtractor */
+    private $universalExtractor;
+
     /**
      * ChmodResolver constructor.
      */
@@ -44,6 +47,7 @@ class ChmodResolver
     {
         $this->digitExtractor = new DigitExtractor();
         $this->bitExtractor = new BitExtractor();
+        $this->universalExtractor = new UniversalExtractor();
     }
 
     public function of(int $mode, string $who, string $op): ChmodResolverResult

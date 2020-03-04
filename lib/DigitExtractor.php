@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace Kugaudo\Chmod;
 
 
-class DigitExtractor
+class DigitExtractor extends UniversalExtractor
 {
     public function get(int $value, int $digit)
     {
-        return 0;
+        return $this->extract(10, $value, $digit);
     }
 }

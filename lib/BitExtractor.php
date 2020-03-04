@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace Kugaudo\Chmod;
 
 
-class BitExtractor
+class BitExtractor extends UniversalExtractor
 {
-    public function get(int $value, int $bit)
+    public function get(int $value, int $digit)
     {
-        return 0;
+        return $this->extract(2, $value, $digit);
     }
 }
